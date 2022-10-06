@@ -28,7 +28,7 @@ app.get('/' , (req, res) => {
 
     // aca dentro
     console.log('hola mundo');
-
+    res.send('hola desde nodejs');
 });
 
 
