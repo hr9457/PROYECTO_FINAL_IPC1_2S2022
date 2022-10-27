@@ -49,6 +49,7 @@ app.post('/login' , (req, res) => {
 
     var dbUsuarios = require('./usuarios.json');
 
+    console.log(req.body);
     var usuarioEnviado = req.body.usuario;
     var passwordEnviado = req.body.password;
 
@@ -97,6 +98,22 @@ app.post('/buscador' , (req, res) => {
         res.send({Error: "No existen stickers de esta seleccion"});
     }
 });
+
+
+
+// post para que el usuario nos envie informacion
+app.post('/suma',(req,res)=>{
+    console.log(req.body);
+    var dato1 = req.body.dato1;
+    var dato2 = req.body.dato2;
+    var suma = dato1 + dato2;
+    var respuesta = {
+        titulo:"operacion",
+        resultado:suma
+    }
+    res.send(respuesta);
+});
+
 
 
 
