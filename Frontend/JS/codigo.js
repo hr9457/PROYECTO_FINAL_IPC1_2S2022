@@ -13,6 +13,8 @@ btn.addEventListener('click',async function saludar2(){
     var text2 = document.getElementById('password').value;
 
 
+    var usuario = '';
+    var password = '';
 
     // primer paso creqr un json con la infrmacion que necesite mi backend
     var data = {
@@ -32,23 +34,26 @@ btn.addEventListener('click',async function saludar2(){
     })
     .then((res)=> res.json())
     .then((data) => {
+        // console.log(data[0]);
+        // usuario = data[0].usuario;
+        // password = data[0].password;        
         return data
     });
 
     // recolectar mi informacion
-    console.log(respuesta);
+    // console.log(respuesta);
 
-    var usuario = '';
-    var password = '';
+    
 
-    usuario = respuesta[0];
-    password = respuesta[0];
+    usuario = respuesta[0].usuario;
+    password = respuesta[0].password;
 
     //verificar si la informacion
     console.log(respuesta[0]);
 
     // para guardar informacion
-    localStorage.setItem('nombre',usuario);
+    // colocar un if para ver si existe el usario puede pasar el text1
+    localStorage.setItem("nombre",text1);
 
     // ENVIARME A OTRA PAGINA
     location.href = "home.html";
