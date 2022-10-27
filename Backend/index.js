@@ -116,6 +116,20 @@ app.post('/suma',(req,res)=>{
 
 
 
+// post para que el usuario nos envie informacion
+app.get('/card',(req,res)=>{
+    const jugador = {
+        "Numero": 11,
+        "Nombre":"Ferrán Torres",
+        "Pais":"España",
+        "Region": "Europa",
+        "Imagen":"https://cdn.sofifa.net/players/241/461/23_120.png"
+    }
+    res.send(jugador);
+});
+
+
+
 
 // correr mi aplicacion en el puerto definido
 // funciones en español o arrwfuncion
